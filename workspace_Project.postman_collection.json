@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4d932f3e-01d2-4bc8-b7bc-983bd1f9a195",
+		"_postman_id": "0faccf3b-fdb2-46a0-8d4e-6ef7cb4f5626",
 		"name": "workspace_Project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21579666"
@@ -13,12 +13,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Creating a variable to save the token\r",
+							"// Create a variable to save the token\r",
 							"var jsonData = JSON.parse(responseBody);\r",
 							"console.log(jsonData);\r",
 							"\r",
 							"// Save value in a Environment Variable\r",
-							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+							"\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -52,16 +55,12 @@
 						"value": "en-US,en;q=0.9"
 					},
 					{
-						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTYyOTM3OTEsImlhdCI6MTY1NjIwNzM5MSwiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.dlX21VoqR6v8U-IcjCm0dJdmy78drOkpBauQW3xSZuw"
-					},
-					{
 						"key": "content-type",
 						"value": "application/x-www-form-urlencoded;charset=UTF-8"
 					},
 					{
 						"key": "cookie",
-						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; __stripe_sid=f731bf07-d9bb-499c-84d3-f0ff68fed7a509c173; _gid=GA1.2.517779086.1656207886"
+						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; _gid=GA1.2.2099395100.1657144393; __stripe_sid=3bbfcffc-85df-47be-a553-8a51ffab9c91f6fc57"
 					},
 					{
 						"key": "origin",
@@ -73,7 +72,7 @@
 					},
 					{
 						"key": "sec-ch-ua",
-						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
 					},
 					{
 						"key": "sec-ch-ua-mobile",
@@ -97,7 +96,7 @@
 					},
 					{
 						"key": "user-agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 					}
 				],
 				"body": {
@@ -128,12 +127,12 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Verify Status 200 as expected\r",
-							"pm.test(\"Verify member of endpoint status code 200 successfully\", function () {\r",
+							"// Verify Status code 200 as expected\r",
+							"pm.test(\"Verify member of endpoint returns status code 200 successfully\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							" var responseData = pm.response.json();\r",
+							"var responseData = pm.response.json();\r",
 							"\r",
 							"// Verify name contains expected result\r",
 							"pm.test(\"Verify name for member of endpoint matches Default successfully\", function () {\r",
@@ -141,26 +140,30 @@
 							"    pm.expect(responseData[0].name).to.equal('Default');\r",
 							"});\r",
 							"\r",
-							"// Verify Id\r",
-							"pm.test(\"Verify Id from the response body for api endpoing member-of\", function(){\r",
+							"// Verify ID\r",
+							"pm.test(\"Verify Id from the response body for api endpoing member-of\", function() {\r",
 							"    pm.expect(responseData[0].id).to.equal('8JkxvH0B9ik-roTyZoBA');\r",
 							"})\r",
 							"\r",
 							"// Verify userId\r",
-							"pm.test(\"Verify userId from the response body for api endpoing member-of\", function(){\r",
+							"pm.test(\"Verify userId from the response body for api endpoing member-of\", function() {\r",
 							"    pm.expect(responseData[0].userId).to.equal('DHUnvH0BtLxR4BgeVIRo');\r",
 							"})\r",
 							"\r",
 							"// Verify Description\r",
-							"pm.test(\"Verify Description from the response body for api endpoing member-of\", function(){\r",
+							"pm.test(\"Verify Description from the response body for api endpoing member-of\", function() {\r",
 							"    pm.expect(responseData[0].description).to.equal('');\r",
 							"})\r",
 							"\r",
-							"// Save value in a Environment Variable id\r",
+							"// Save value in a Environment Variable id \r",
 							"postman.setEnvironmentVariable(\"id\", responseData[0].id);\r",
 							"\r",
 							"// Save value in a Environment Variable userId\r",
 							"postman.setEnvironmentVariable(\"userId\", responseData[0].userId);\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
 							""
 						],
 						"type": "text/javascript"
@@ -194,11 +197,12 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTY0NjE3NjIsImlhdCI6MTY1NjM3NTM2MiwiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.clsY-lH0zef6YNVAZ3TJ3a02H5MXvEyeV0DxGmRpfKM"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTcyMzMyMTYsImlhdCI6MTY1NzE0NjgxNiwiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.JfHEQHdx9wA7hmdq8Yk1BUaiX_XZQHaeRWfoL1pUrXY",
+						"disabled": true
 					},
 					{
 						"key": "cookie",
-						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; _gid=GA1.2.517779086.1656207886; __stripe_sid=c7a88d5e-e3d2-4947-a8d3-c2025a9b39d12e5118; _gat_gtag_UA_68231741_1=1; _gat=1"
+						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; _gid=GA1.2.2099395100.1657144393; __stripe_sid=3bbfcffc-85df-47be-a553-8a51ffab9c91f6fc57"
 					},
 					{
 						"key": "referer",
@@ -206,7 +210,7 @@
 					},
 					{
 						"key": "sec-ch-ua",
-						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
 					},
 					{
 						"key": "sec-ch-ua-mobile",
@@ -230,7 +234,7 @@
 					},
 					{
 						"key": "user-agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 					}
 				],
 				"url": {
@@ -258,8 +262,9 @@
 						"exec": [
 							"\r",
 							"var responseData = pm.response.json();\r",
-							"// Create a variable for id and call it responseID\r",
-							"postman.setEnvironmentVariable(\"responseID\", responseData.id);"
+							"// create a variable for id and call it responseID\r",
+							"postman.setEnvironmentVariable(\"responseID\", responseData.id);\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -292,7 +297,7 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTY0NjE3NjIsImlhdCI6MTY1NjM3NTM2MiwiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.clsY-lH0zef6YNVAZ3TJ3a02H5MXvEyeV0DxGmRpfKM",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs",
 						"disabled": true
 					},
 					{
@@ -301,7 +306,7 @@
 					},
 					{
 						"key": "cookie",
-						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; _gid=GA1.2.517779086.1656207886; __stripe_sid=c7a88d5e-e3d2-4947-a8d3-c2025a9b39d12e5118"
+						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; __stripe_sid=3bbfcffc-85df-47be-a553-8a51ffab9c91f6fc57"
 					},
 					{
 						"key": "origin",
@@ -313,7 +318,7 @@
 					},
 					{
 						"key": "sec-ch-ua",
-						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
 					},
 					{
 						"key": "sec-ch-ua-mobile",
@@ -337,12 +342,12 @@
 					},
 					{
 						"key": "user-agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"\",\r\n    \"created\": \"2022-06-28T16:55:53.171Z\",\r\n    \"lastModified\": \"2022-06-28T16:55:53.171Z\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"workspaceId\": \"{{id}}\",\r\n    \"name\": \"testBatch6\",\r\n    \"description\": \"Api project batch 6\",\r\n    \"type\": \"DESIGN\",\r\n    \"tags\": []\r\n}"
+					"raw": "{\r\n    \"id\": \"\",\r\n    \"created\": \"2022-07-09T22:28:17.923Z\",\r\n    \"lastModified\": \"2022-07-09T22:28:17.923Z\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"workspaceId\": \"{{id}}\",\r\n    \"name\": \"testBatch6\",\r\n    \"description\": \"Api project batch 6\",\r\n    \"type\": \"DESIGN\",\r\n    \"tags\": []\r\n}"
 				},
 				"url": {
 					"raw": "https://api.octoperf.com/design/projects?workspaceId={{id}}",
@@ -385,7 +390,7 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTY0NjE3NjIsImlhdCI6MTY1NjM3NTM2MiwiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.clsY-lH0zef6YNVAZ3TJ3a02H5MXvEyeV0DxGmRpfKM"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs"
 					},
 					{
 						"key": "content-type",
@@ -393,7 +398,7 @@
 					},
 					{
 						"key": "cookie",
-						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; _gid=GA1.2.517779086.1656207886; __stripe_sid=c7a88d5e-e3d2-4947-a8d3-c2025a9b39d12e5118"
+						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; __stripe_sid=3bbfcffc-85df-47be-a553-8a51ffab9c91f6fc57"
 					},
 					{
 						"key": "origin",
@@ -405,7 +410,7 @@
 					},
 					{
 						"key": "sec-ch-ua",
-						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
 					},
 					{
 						"key": "sec-ch-ua-mobile",
@@ -429,12 +434,12 @@
 					},
 					{
 						"key": "user-agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"created\": 1656435353171,\r\n    \"description\": \"test project modified part 2\",\r\n    \"id\": \"{{responseID}}\",\r\n    \"lastModified\": 1656435762771,\r\n    \"name\": \"d!@#!@#\",\r\n    \"tags\": [],\r\n    \"type\": \"DESIGN\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"workspaceId\": \"{{id}}\"\r\n}"
+					"raw": "{\r\n    \"created\": 1657405697923,\r\n    \"description\": \"test project modified part 2\",\r\n    \"id\": \"{{responseID}}\",\r\n    \"lastModified\": 1657406123369,\r\n    \"name\": \"d!@#!@#\",\r\n    \"tags\": [],\r\n    \"type\": \"DESIGN\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"workspaceId\": \"{{id}}\"\r\n}"
 				},
 				"url": {
 					"raw": "https://api.octoperf.com/design/projects/{{responseID}}?workspaceId={{id}}",
@@ -460,15 +465,14 @@
 			"response": []
 		},
 		{
-			"name": "Delete-Project",
+			"name": "Delete-project",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Verify status code 204 after deleting a project\", function () {\r",
+							"pm.test(\"Verify satus code 204 after deleting a project\", function() {\r",
 							"    pm.response.to.have.status(204);\r",
-							"\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -492,11 +496,11 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTY0NjE3NjIsImlhdCI6MTY1NjM3NTM2MiwiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.clsY-lH0zef6YNVAZ3TJ3a02H5MXvEyeV0DxGmRpfKM"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs"
 					},
 					{
 						"key": "cookie",
-						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; _gid=GA1.2.517779086.1656207886; __stripe_sid=c7a88d5e-e3d2-4947-a8d3-c2025a9b39d12e5118"
+						"value": "__stripe_mid=9051d931-a248-422e-bcb8-cb38843c697902fc33; _ga=GA1.2.1504114425.1656026479; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=qp0k6x9b3wswi9ncr1wrd4vmyll0zz0fdumereb8ll6; __stripe_sid=3bbfcffc-85df-47be-a553-8a51ffab9c91f6fc57; _gid=GA1.2.1961114369.1657406821"
 					},
 					{
 						"key": "origin",
@@ -508,7 +512,7 @@
 					},
 					{
 						"key": "sec-ch-ua",
-						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
 					},
 					{
 						"key": "sec-ch-ua-mobile",
@@ -532,11 +536,11 @@
 					},
 					{
 						"key": "user-agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 					}
 				],
 				"url": {
-					"raw": "https://api.octoperf.com/design/projects/{{responseId}}?workspaceId={{id}}",
+					"raw": "https://api.octoperf.com/design/projects/{{responseID}}?workspaceId={{id}}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -546,7 +550,7 @@
 					"path": [
 						"design",
 						"projects",
-						"{{responseId}}"
+						"{{responseID}}"
 					],
 					"query": [
 						{
