@@ -374,6 +374,16 @@
 		{
 			"name": "Update-Project",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -390,7 +400,8 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs",
+						"disabled": true
 					},
 					{
 						"key": "content-type",
@@ -480,6 +491,16 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [
 					{
@@ -496,7 +517,8 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiREhVbnZIMEJ0THhSNEJnZVZJUm8iLCJleHAiOjE2NTc0OTE5MTcsImlhdCI6MTY1NzQwNTUxNywiaGFzaCI6IjdjYWY3YzY4MWVhNzlhOTMyYzJhNGRlY2UwZDk1MzE3In0.c7pgAB6lInRV11p9ano-iSim6LmmoPFVBAq0XfbvxPs",
+						"disabled": true
 					},
 					{
 						"key": "cookie",
